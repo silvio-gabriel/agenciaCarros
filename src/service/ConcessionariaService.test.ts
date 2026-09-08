@@ -3,10 +3,7 @@ import { ConcessionariaService } from './ConcessionariaService';
 describe('Serviço ConcessionariaService', () => {
 
     let mockRepository: any;
-
-
     let concessionariaService: ConcessionariaService;
-
 
     beforeEach(() => {
 
@@ -15,7 +12,7 @@ describe('Serviço ConcessionariaService', () => {
             listarTodos: jest.fn(),
             buscarPorId: jest.fn(),
             atualizar: jest.fn(),
-            excluir: jest.fn
+            excluir: jest.fn()
         };
 
         concessionariaService = new ConcessionariaService(mockRepository);
@@ -48,6 +45,6 @@ describe('Serviço ConcessionariaService', () => {
 
             await expect(concessionariaService.buscarPorId(999))
                 .rejects.toThrow("Concessionaria não encontrada.");
-        })
-    })
+        });
+    });
 });
